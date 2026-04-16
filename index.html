@@ -6,116 +6,86 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Reels 腳本靈感填空懶人包</title>
 <style>
-:root {
-  --ink: #1A1410;
-  --paper: #F9F4EE;
-  --warm: #EDE5D8;
-  --accent: #B5541E;
-  --gold: #C8973A;
-  --muted: #7A6A5A;
-  --line: #D8CCBE;
-  --tag-beauty: #8B3A2A;
-  --tag-media: #2A4A8B;
-  --tag-ec: #2A6B3A;
-  --tag-life: #6B3A7A;
-}
-
-- { margin: 0; padding: 0; box-sizing: border-box; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-background: var(–paper);
+background: #F9F4EE;
 font-family: -apple-system, ‘PingFang TC’, ‘Microsoft JhengHei’, sans-serif;
-color: var(–ink);
+color: #1A1410;
 min-height: 100vh;
 }
 
-/* NOISE TEXTURE */
-body::before {
-content: ‘’;
-position: fixed;
-inset: 0;
-background-image: url(“data:image/svg+xml,%3Csvg viewBox=‘0 0 256 256’ xmlns=‘http://www.w3.org/2000/svg’%3E%3Cfilter id=‘noise’%3E%3CfeTurbulence type=‘fractalNoise’ baseFrequency=‘0.9’ numOctaves=‘4’ stitchTiles=‘stitch’/%3E%3C/filter%3E%3Crect width=‘100%25’ height=‘100%25’ filter=‘url(%23noise)’ opacity=‘0.03’/%3E%3C/svg%3E”);
-pointer-events: none;
-z-index: 0;
-}
+.wrap { max-width: 680px; margin: 0 auto; padding: 32px 20px 80px; }
 
-.wrap { position: relative; z-index: 1; max-width: 680px; margin: 0 auto; padding: 32px 20px 80px; }
-
-/* HEADER */
 .masthead {
-border-bottom: 2px solid var(–ink);
+border-bottom: 2px solid #1A1410;
 padding-bottom: 20px;
-margin-bottom: 32px;
-animation: fadeIn 0.7s ease both;
+margin-bottom: 28px;
 }
 
 .masthead-top {
 display: flex;
 justify-content: space-between;
-align-items: flex-start;
-margin-bottom: 8px;
+align-items: center;
+margin-bottom: 10px;
 }
 
 .issue-tag {
 font-size: 9px;
 letter-spacing: 3px;
-color: var(–muted);
-text-transform: uppercase;
-border: 1px solid var(–line);
+color: #7A6A5A;
+border: 1px solid #D8CCBE;
 padding: 3px 8px;
 border-radius: 2px;
+text-transform: uppercase;
 }
 
 .by-tag {
 font-size: 9px;
 letter-spacing: 2px;
-color: var(–accent);
+color: #B5541E;
 text-transform: uppercase;
 }
 
 .masthead h1 {
-font-family: -apple-system, ‘PingFang TC’, ‘Microsoft JhengHei’, serif;
-font-size: clamp(32px, 8vw, 52px);
-font-weight: 700;
-line-height: 1.05;
-color: var(–ink);
+font-size: clamp(28px, 7vw, 48px);
+font-weight: 800;
+line-height: 1.1;
+color: #1A1410;
 margin-bottom: 6px;
 }
 
 .masthead h1 em {
 font-style: italic;
-color: var(–accent);
+color: #B5541E;
 }
 
 .masthead-sub {
 font-size: 11px;
-color: var(–muted);
-letter-spacing: 1.5px;
+color: #7A6A5A;
+letter-spacing: 1px;
 }
 
-/* INTRO */
 .intro-box {
-background: var(–warm);
-border-left: 3px solid var(–accent);
+background: #EDE5D8;
+border-left: 3px solid #B5541E;
 padding: 14px 16px;
-margin-bottom: 32px;
+margin-bottom: 24px;
 font-size: 12px;
 line-height: 1.8;
-color: var(–muted);
-animation: fadeIn 0.7s 0.1s ease both;
+color: #7A6A5A;
+border-radius: 0 4px 4px 0;
 }
 
-.intro-box strong { color: var(–accent); }
+.intro-box strong { color: #B5541E; }
 
-/* TEMPLATE TABS */
 .tabs {
 display: flex;
 gap: 4px;
-margin-bottom: 0;
 overflow-x: auto;
 padding-bottom: 0;
-animation: fadeIn 0.7s 0.15s ease both;
 scrollbar-width: none;
+margin-bottom: 0;
 }
 .tabs::-webkit-scrollbar { display: none; }
 
@@ -125,47 +95,43 @@ padding: 8px 14px;
 font-family: -apple-system, ‘PingFang TC’, ‘Microsoft JhengHei’, sans-serif;
 font-size: 10px;
 letter-spacing: 1px;
-border: 1px solid var(–line);
+border: 1px solid #D8CCBE;
 border-bottom: none;
-background: var(–warm);
-color: var(–muted);
+background: #EDE5D8;
+color: #7A6A5A;
 cursor: pointer;
 border-radius: 4px 4px 0 0;
 transition: all 0.2s;
 }
 
 .tab-btn.active {
-background: var(–ink);
-color: var(–paper);
-border-color: var(–ink);
+background: #1A1410;
+color: #F9F4EE;
+border-color: #1A1410;
 }
 
-/* SCRIPT CARD */
 .script-panel {
 display: none;
-border: 1.5px solid var(–ink);
+border: 1.5px solid #1A1410;
 border-radius: 0 4px 4px 4px;
 background: #fff;
-animation: slideUp 0.3s ease both;
 margin-bottom: 28px;
 }
 
 .script-panel.active { display: block; }
 
 .panel-header {
-background: var(–ink);
-color: var(–paper);
-padding: 16px 20px;
+background: #1A1410;
+color: #F9F4EE;
+padding: 14px 18px;
 display: flex;
 justify-content: space-between;
 align-items: center;
 }
 
 .panel-title {
-font-family: -apple-system, ‘PingFang TC’, ‘Microsoft JhengHei’, serif;
-font-size: 18px;
-font-weight: 600;
-letter-spacing: 0.5px;
+font-size: 16px;
+font-weight: 700;
 }
 
 .panel-badge {
@@ -177,10 +143,9 @@ border-radius: 2px;
 color: rgba(255,255,255,0.7);
 }
 
-/* BLOCKS */
 .block {
-padding: 18px 20px;
-border-bottom: 1px solid var(–line);
+padding: 16px 18px;
+border-bottom: 1px solid #D8CCBE;
 }
 
 .block:last-child { border-bottom: none; }
@@ -194,7 +159,7 @@ margin-bottom: 10px;
 
 .block-num {
 width: 22px; height: 22px;
-background: var(–accent);
+background: #B5541E;
 color: #fff;
 font-size: 10px;
 font-weight: 700;
@@ -207,90 +172,89 @@ flex-shrink: 0;
 font-size: 10px;
 font-weight: 700;
 letter-spacing: 2px;
-color: var(–muted);
+color: #7A6A5A;
 text-transform: uppercase;
 }
 
 .block-tip {
 font-size: 10px;
-color: var(–gold);
+color: #C8973A;
 margin-left: auto;
 font-style: italic;
-}
-
-.fill-area {
-position: relative;
 }
 
 .template-text {
 font-size: 13px;
 line-height: 2;
-color: var(–ink);
-background: var(–paper);
-border: 1px solid var(–line);
+color: #1A1410;
+background: #F9F4EE;
+border: 1px solid #D8CCBE;
 border-radius: 4px;
 padding: 12px 14px;
 min-height: 60px;
-margin-bottom: 6px;
+margin-bottom: 8px;
 }
 
 .blank {
 display: inline-block;
-border-bottom: 2px solid var(–accent);
+border-bottom: 2px solid #B5541E;
 min-width: 80px;
 padding: 0 4px;
-color: var(–accent);
+color: #B5541E;
 font-weight: 500;
 cursor: text;
 border-radius: 2px;
-transition: background 0.15s;
 outline: none;
+transition: background 0.15s;
 }
 
 .blank:focus { background: #FFF0E8; }
-.blank:empty::before { content: attr(data-placeholder); opacity: 0.4; font-style: italic; }
+.blank:empty::before {
+content: attr(data-placeholder);
+opacity: 0.4;
+font-style: italic;
+}
 
 .hint-row {
 display: flex;
 flex-wrap: wrap;
 gap: 6px;
-margin-top: 6px;
+margin-top: 4px;
+}
+
+.hint-label {
+font-size: 9px;
+color: #D8CCBE;
+letter-spacing: 1px;
+align-self: center;
 }
 
 .hint-chip {
 font-size: 10px;
 padding: 3px 9px;
-background: var(–warm);
-border: 1px solid var(–line);
+background: #EDE5D8;
+border: 1px solid #D8CCBE;
 border-radius: 20px;
-color: var(–muted);
+color: #7A6A5A;
 cursor: pointer;
 transition: all 0.15s;
 }
 
-.hint-chip:hover {
-background: var(–accent);
+.hint-chip:hover, .hint-chip:active {
+background: #B5541E;
 color: #fff;
-border-color: var(–accent);
+border-color: #B5541E;
 }
 
-.hint-label {
-font-size: 9px;
-color: var(–line);
-letter-spacing: 1px;
-align-self: center;
-}
-
-/* PREVIEW */
 .preview-section {
-margin: 0 20px 20px;
-border: 1px dashed var(–line);
+margin: 0 18px 16px;
+border: 1px dashed #D8CCBE;
 border-radius: 4px;
 overflow: hidden;
 }
 
 .preview-header {
-background: var(–warm);
+background: #EDE5D8;
 padding: 8px 14px;
 display: flex;
 justify-content: space-between;
@@ -300,7 +264,7 @@ align-items: center;
 .preview-label {
 font-size: 9px;
 letter-spacing: 2px;
-color: var(–muted);
+color: #7A6A5A;
 text-transform: uppercase;
 }
 
@@ -308,661 +272,450 @@ text-transform: uppercase;
 font-size: 9px;
 letter-spacing: 1px;
 padding: 4px 10px;
-background: var(–ink);
-color: var(–paper);
+background: #1A1410;
+color: #F9F4EE;
 border: none;
 border-radius: 2px;
 cursor: pointer;
-font-family: -apple-system, ‘PingFang TC’, ‘Microsoft JhengHei’, sans-serif;
-transition: background 0.2s;
+font-family: -apple-system, ‘PingFang TC’, sans-serif;
 }
 
-.copy-btn:hover { background: var(–accent); }
 .copy-btn.copied { background: #2A6B3A; }
 
 .preview-body {
 padding: 14px;
 font-size: 12px;
 line-height: 2;
-color: var(–ink);
+color: #1A1410;
 white-space: pre-wrap;
 min-height: 80px;
 background: #fff;
 }
 
-/* RESET BTN */
 .reset-btn {
 display: block;
-margin: 0 20px 20px;
-width: calc(100% - 40px);
+margin: 0 18px 18px;
+width: calc(100% - 36px);
 padding: 10px;
 background: none;
-border: 1px solid var(–line);
-color: var(–muted);
-font-family: -apple-system, ‘PingFang TC’, ‘Microsoft JhengHei’, sans-serif;
+border: 1px solid #D8CCBE;
+color: #7A6A5A;
+font-family: -apple-system, ‘PingFang TC’, sans-serif;
 font-size: 11px;
 cursor: pointer;
 border-radius: 2px;
-transition: all 0.2s;
-}
-
-.reset-btn:hover { border-color: var(–accent); color: var(–accent); }
-
-/* FORMULA GUIDE */
-.formula-section {
-margin-bottom: 32px;
-animation: fadeIn 0.7s 0.2s ease both;
 }
 
 .section-head {
 display: flex;
 align-items: center;
 gap: 10px;
-margin-bottom: 16px;
+margin-bottom: 14px;
 }
 
 .section-head h2 {
-font-family: -apple-system, ‘PingFang TC’, ‘Microsoft JhengHei’, serif;
-font-size: 22px;
-font-weight: 600;
-color: var(–ink);
+font-size: 20px;
+font-weight: 700;
+color: #1A1410;
+white-space: nowrap;
 }
 
-.section-line { flex: 1; height: 1px; background: var(–line); }
+.section-line { flex: 1; height: 1px; background: #D8CCBE; }
 
 .formula-grid {
 display: grid;
 grid-template-columns: 1fr 1fr;
 gap: 10px;
+margin-bottom: 28px;
 }
 
 @media (max-width: 480px) { .formula-grid { grid-template-columns: 1fr; } }
 
 .formula-card {
-border: 1px solid var(–line);
+border: 1px solid #D8CCBE;
 border-radius: 4px;
 overflow: hidden;
-transition: box-shadow 0.2s;
 }
 
-.formula-card:hover { box-shadow: 0 4px 16px rgba(26,20,16,0.08); }
-
 .formula-top {
-padding: 12px 14px 8px;
-border-bottom: 1px solid var(–line);
-background: var(–warm);
+padding: 10px 12px 8px;
+border-bottom: 1px solid #D8CCBE;
+background: #EDE5D8;
 }
 
 .formula-name {
 font-size: 11px;
 font-weight: 700;
-color: var(–accent);
+color: #B5541E;
 letter-spacing: 1px;
 margin-bottom: 2px;
 }
 
 .formula-desc {
 font-size: 10px;
-color: var(–muted);
+color: #7A6A5A;
 }
 
 .formula-body {
-padding: 12px 14px;
+padding: 10px 12px;
 font-size: 11px;
 line-height: 1.9;
-color: var(–ink);
+color: #1A1410;
 background: #fff;
 }
 
-.formula-body span {
-color: var(–accent);
-font-weight: 700;
-}
+.formula-body span { color: #B5541E; font-weight: 700; }
 
-/* FOOTER */
 .footer {
 text-align: center;
 padding-top: 24px;
-border-top: 1px solid var(–line);
+border-top: 1px solid #D8CCBE;
 font-size: 10px;
-color: var(–muted);
+color: #7A6A5A;
 letter-spacing: 1px;
-animation: fadeIn 0.7s 0.3s ease both;
 }
 
-.footer strong { color: var(–accent); }
-
-/* ANIMATIONS */
-@keyframes fadeIn {
-from { opacity: 0; transform: translateY(10px); }
-to   { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes slideUp {
-from { opacity: 0; transform: translateY(6px); }
-to   { opacity: 1; transform: translateY(0); }
-}
+.footer strong { color: #B5541E; }
 </style>
 
 </head>
 <body>
 <div class="wrap">
 
-  <!-- MASTHEAD -->
-
-  <div class="masthead">
-    <div class="masthead-top">
-      <span class="issue-tag">Reels Script Kit</span>
-      <span class="by-tag">by @a.b_wei</span>
-    </div>
-    <h1>短影音腳本<br><em>靈感填空</em>懶人包</h1>
-    <p class="masthead-sub">填入你的行業關鍵字，30秒生成一支影片腳本</p>
+<div class="masthead">
+  <div class="masthead-top">
+    <span class="issue-tag">Reels Script Kit</span>
+    <span class="by-tag">by @a.b_wei</span>
   </div>
-
-  <!-- INTRO -->
-
-  <div class="intro-box">
-    👋 不知道拍什麼？這份懶人包有 <strong>5 種萬用腳本公式</strong>，適合任何行業！<br>
-    填入你的關鍵字 → 點空格輸入 → 複製貼到備忘錄就能開拍。
-  </div>
-
-  <!-- TEMPLATES -->
-
-  <div class="tabs" id="tabs">
-    <button class="tab-btn active" onclick="switchTab(0)">① 痛點共鳴</button>
-    <button class="tab-btn" onclick="switchTab(1)">② 揭秘教學</button>
-    <button class="tab-btn" onclick="switchTab(2)">③ 對比反差</button>
-    <button class="tab-btn" onclick="switchTab(3)">④ 結果導向</button>
-    <button class="tab-btn" onclick="switchTab(4)">⑤ 身份認同</button>
-  </div>
-
-  <!-- PANEL 0: 痛點共鳴 -->
-
-  <div class="script-panel active" id="panel-0">
-    <div class="panel-header">
-      <span class="panel-title">痛點共鳴型</span>
-      <span class="panel-badge">最高留言率</span>
-    </div>
-
-```
-<div class="block">
-  <div class="block-label">
-    <div class="block-num">1</div>
-    <span class="block-name">開場鉤子（0–3秒）</span>
-    <span class="block-tip">要讓人停止滑動！</span>
-  </div>
-  <div class="fill-area">
-    <div class="template-text">
-      你是不是也有這個困擾：<span class="blank" contenteditable="true" data-placeholder="你的目標客群痛點" data-key="p0_pain"></span>？
-    </div>
-    <div class="hint-row">
-      <span class="hint-label">靈感：</span>
-      <span class="hint-chip" onclick="fillBlank('p0_pain', '做了很多Reels但粉絲不增加')">粉絲不增加</span>
-      <span class="hint-chip" onclick="fillBlank('p0_pain', '不知道每天要拍什麼')">不知道拍什麼</span>
-      <span class="hint-chip" onclick="fillBlank('p0_pain', '花了很多錢做美睫但維持不久')">美睫不持久</span>
-      <span class="hint-chip" onclick="fillBlank('p0_pain', '每天工作很忙沒時間經營副業')">沒時間副業</span>
-    </div>
-  </div>
+  <h1>短影音腳本<br><em>靈感填空</em>懶人包</h1>
+  <p class="masthead-sub">填入你的行業關鍵字，30秒生成一支影片腳本</p>
 </div>
 
-<div class="block">
-  <div class="block-label">
-    <div class="block-num">2</div>
-    <span class="block-name">引發共鳴（3–8秒）</span>
-  </div>
-  <div class="fill-area">
-    <div class="template-text">
-      我之前也是這樣，<span class="blank" contenteditable="true" data-placeholder="你的親身經歷" data-key="p0_exp"></span>，覺得<span class="blank" contenteditable="true" data-placeholder="負面感受" data-key="p0_feel"></span>。
-    </div>
-    <div class="hint-row">
-      <span class="hint-label">靈感：</span>
-      <span class="hint-chip" onclick="fillBlank('p0_exp', '每天發文沒人互動')">每天發文沒反應</span>
-      <span class="hint-chip" onclick="fillBlank('p0_exp', '試了很多方法都沒效')">試了很多沒效</span>
-      <span class="hint-chip" onclick="fillBlank('p0_feel', '好挫折想放棄')">好挫折想放棄</span>
-      <span class="hint-chip" onclick="fillBlank('p0_feel', '浪費了很多時間')">浪費很多時間</span>
-    </div>
-  </div>
+<div class="intro-box">
+  👋 不知道拍什麼？這份懶人包有 <strong>5 種萬用腳本公式</strong>，適合任何行業！<br>
+  填入你的關鍵字 → 點空格輸入 → 複製貼到備忘錄就能開拍。
 </div>
 
-<div class="block">
-  <div class="block-label">
-    <div class="block-num">3</div>
-    <span class="block-name">轉折解法（8–20秒）</span>
-  </div>
-  <div class="fill-area">
-    <div class="template-text">
-      直到我發現了<span class="blank" contenteditable="true" data-placeholder="你的解決方法" data-key="p0_sol"></span>，只要<span class="blank" contenteditable="true" data-placeholder="簡單步驟/時間" data-key="p0_step"></span>就能做到。
-    </div>
-    <div class="hint-row">
-      <span class="hint-label">靈感：</span>
-      <span class="hint-chip" onclick="fillBlank('p0_sol', '這個腳本公式')">這個腳本公式</span>
-      <span class="hint-chip" onclick="fillBlank('p0_sol', '自動回覆系統')">自動回覆系統</span>
-      <span class="hint-chip" onclick="fillBlank('p0_step', '每天10分鐘')">每天10分鐘</span>
-      <span class="hint-chip" onclick="fillBlank('p0_step', '3個步驟')">3個步驟</span>
-    </div>
-  </div>
+<div class="tabs" id="tabs">
+  <button class="tab-btn active" onclick="switchTab(0)">① 痛點共鳴</button>
+  <button class="tab-btn" onclick="switchTab(1)">② 揭秘教學</button>
+  <button class="tab-btn" onclick="switchTab(2)">③ 對比反差</button>
+  <button class="tab-btn" onclick="switchTab(3)">④ 結果導向</button>
+  <button class="tab-btn" onclick="switchTab(4)">⑤ 身份認同</button>
 </div>
 
-<div class="block">
-  <div class="block-label">
-    <div class="block-num">4</div>
-    <span class="block-name">行動呼籲 CTA（最後3秒）</span>
+<!-- PANEL 0 -->
+
+<div class="script-panel active" id="panel-0">
+  <div class="panel-header">
+    <span class="panel-title">痛點共鳴型</span>
+    <span class="panel-badge">最高留言率</span>
   </div>
-  <div class="fill-area">
-    <div class="template-text">
-      留言「<span class="blank" contenteditable="true" data-placeholder="關鍵字" data-key="p0_cta"></span>」，我私傳給你完整的<span class="blank" contenteditable="true" data-placeholder="資料名稱" data-key="p0_gift"></span>！
+  <div class="block">
+    <div class="block-label">
+      <div class="block-num">1</div>
+      <span class="block-name">開場鉤子（0–3秒）</span>
+      <span class="block-tip">要讓人停止滑動！</span>
     </div>
+    <div class="template-text">你是不是也有這個困擾：<span class="blank" contenteditable="true" data-placeholder="你的目標客群痛點" data-key="p0_pain"></span>？</div>
     <div class="hint-row">
       <span class="hint-label">靈感：</span>
-      <span class="hint-chip" onclick="fillBlank('p0_cta', '腳本')">腳本</span>
-      <span class="hint-chip" onclick="fillBlank('p0_cta', '攻略')">攻略</span>
-      <span class="hint-chip" onclick="fillBlank('p0_gift', '腳本懶人包')">腳本懶人包</span>
-      <span class="hint-chip" onclick="fillBlank('p0_gift', '免費模板')">免費模板</span>
+      <span class="hint-chip" onclick="fillBlank('p0_pain','粉絲不增加')">粉絲不增加</span>
+      <span class="hint-chip" onclick="fillBlank('p0_pain','不知道拍什麼')">不知道拍什麼</span>
+      <span class="hint-chip" onclick="fillBlank('p0_pain','美睫不持久')">美睫不持久</span>
+      <span class="hint-chip" onclick="fillBlank('p0_pain','沒時間副業')">沒時間副業</span>
     </div>
   </div>
-</div>
-
-<div class="preview-section">
-  <div class="preview-header">
-    <span class="preview-label">預覽腳本</span>
-    <button class="copy-btn" onclick="copyScript(0)">複製</button>
-  </div>
-  <div class="preview-body" id="preview-0">填完上方空格，這裡會自動生成你的腳本 ✍️</div>
-</div>
-<button class="reset-btn" onclick="resetPanel(0)">↺ 清空重填</button>
-```
-
-  </div>
-
-  <!-- PANEL 1: 揭秘教學 -->
-
-  <div class="script-panel" id="panel-1">
-    <div class="panel-header">
-      <span class="panel-title">揭秘教學型</span>
-      <span class="panel-badge">最高儲存率</span>
+  <div class="block">
+    <div class="block-label">
+      <div class="block-num">2</div>
+      <span class="block-name">引發共鳴（3–8秒）</span>
     </div>
-
-```
-<div class="block">
-  <div class="block-label"><div class="block-num">1</div><span class="block-name">開場鉤子</span></div>
-  <div class="fill-area">
-    <div class="template-text">
-      <span class="blank" contenteditable="true" data-placeholder="數字" data-key="p1_num"></span>個關於<span class="blank" contenteditable="true" data-placeholder="主題" data-key="p1_topic"></span>的秘密，<span class="blank" contenteditable="true" data-placeholder="目標受眾" data-key="p1_who"></span>都不知道！
-    </div>
+    <div class="template-text">我之前也是這樣，<span class="blank" contenteditable="true" data-placeholder="你的親身經歷" data-key="p0_exp"></span>，覺得<span class="blank" contenteditable="true" data-placeholder="負面感受" data-key="p0_feel"></span>。</div>
     <div class="hint-row">
       <span class="hint-label">靈感：</span>
-      <span class="hint-chip" onclick="fillBlank('p1_num','3')">3</span>
-      <span class="hint-chip" onclick="fillBlank('p1_num','5')">5</span>
+      <span class="hint-chip" onclick="fillBlank('p0_exp','每天發文沒人互動')">每天發文沒反應</span>
+      <span class="hint-chip" onclick="fillBlank('p0_feel','好挫折想放棄')">好挫折想放棄</span>
+    </div>
+  </div>
+  <div class="block">
+    <div class="block-label">
+      <div class="block-num">3</div>
+      <span class="block-name">轉折解法（8–20秒）</span>
+    </div>
+    <div class="template-text">直到我發現了<span class="blank" contenteditable="true" data-placeholder="你的解決方法" data-key="p0_sol"></span>，只要<span class="blank" contenteditable="true" data-placeholder="簡單步驟/時間" data-key="p0_step"></span>就能做到。</div>
+    <div class="hint-row">
+      <span class="hint-label">靈感：</span>
+      <span class="hint-chip" onclick="fillBlank('p0_sol','這個腳本公式')">這個腳本公式</span>
+      <span class="hint-chip" onclick="fillBlank('p0_step','每天10分鐘')">每天10分鐘</span>
+    </div>
+  </div>
+  <div class="block">
+    <div class="block-label">
+      <div class="block-num">4</div>
+      <span class="block-name">行動呼籲 CTA</span>
+    </div>
+    <div class="template-text">留言「<span class="blank" contenteditable="true" data-placeholder="關鍵字" data-key="p0_cta"></span>」，我私傳給你完整的<span class="blank" contenteditable="true" data-placeholder="資料名稱" data-key="p0_gift"></span>！</div>
+    <div class="hint-row">
+      <span class="hint-chip" onclick="fillBlank('p0_cta','攻略')">攻略</span>
+      <span class="hint-chip" onclick="fillBlank('p0_gift','腳本懶人包')">腳本懶人包</span>
+    </div>
+  </div>
+  <div class="preview-section">
+    <div class="preview-header">
+      <span class="preview-label">預覽腳本</span>
+      <button class="copy-btn" onclick="copyScript(0)">複製</button>
+    </div>
+    <div class="preview-body" id="preview-0">填完上方空格，腳本會自動出現 ✍️</div>
+  </div>
+  <button class="reset-btn" onclick="resetPanel(0)">↺ 清空重填</button>
+</div>
+
+<!-- PANEL 1 -->
+
+<div class="script-panel" id="panel-1">
+  <div class="panel-header">
+    <span class="panel-title">揭秘教學型</span>
+    <span class="panel-badge">最高儲存率</span>
+  </div>
+  <div class="block">
+    <div class="block-label"><div class="block-num">1</div><span class="block-name">開場鉤子</span></div>
+    <div class="template-text"><span class="blank" contenteditable="true" data-placeholder="數字" data-key="p1_num"></span>個關於<span class="blank" contenteditable="true" data-placeholder="主題" data-key="p1_topic"></span>的秘密，<span class="blank" contenteditable="true" data-placeholder="目標受眾" data-key="p1_who"></span>都不知道！</div>
+    <div class="hint-row">
+      <span class="hint-chip" onclick="fillBlank('p1_num','3')">3個</span>
       <span class="hint-chip" onclick="fillBlank('p1_topic','IG漲粉')">IG漲粉</span>
-      <span class="hint-chip" onclick="fillBlank('p1_topic','美睫保養')">美睫保養</span>
       <span class="hint-chip" onclick="fillBlank('p1_who','90%的新手')">90%新手</span>
     </div>
   </div>
-</div>
-
-<div class="block">
-  <div class="block-label"><div class="block-num">2</div><span class="block-name">內容主體（列點）</span></div>
-  <div class="fill-area">
-    <div class="template-text">
-      第一：<span class="blank" contenteditable="true" data-placeholder="秘訣一" data-key="p1_t1"></span>。<br>
-      第二：<span class="blank" contenteditable="true" data-placeholder="秘訣二" data-key="p1_t2"></span>。<br>
-      第三：<span class="blank" contenteditable="true" data-placeholder="秘訣三" data-key="p1_t3"></span>。
-    </div>
+  <div class="block">
+    <div class="block-label"><div class="block-num">2</div><span class="block-name">內容主體</span></div>
+    <div class="template-text">第一：<span class="blank" contenteditable="true" data-placeholder="秘訣一" data-key="p1_t1"></span>。<br>第二：<span class="blank" contenteditable="true" data-placeholder="秘訣二" data-key="p1_t2"></span>。<br>第三：<span class="blank" contenteditable="true" data-placeholder="秘訣三" data-key="p1_t3"></span>。</div>
     <div class="hint-row">
-      <span class="hint-label">靈感：</span>
-      <span class="hint-chip" onclick="fillBlank('p1_t1','發文時間比內容更重要')">發文時間</span>
+      <span class="hint-chip" onclick="fillBlank('p1_t1','發文時間比內容重要')">發文時間</span>
       <span class="hint-chip" onclick="fillBlank('p1_t2','開頭3秒決定一切')">開頭3秒</span>
-      <span class="hint-chip" onclick="fillBlank('p1_t3','CTA要放在最後')">CTA技巧</span>
+      <span class="hint-chip" onclick="fillBlank('p1_t3','CTA要放最後')">CTA技巧</span>
     </div>
   </div>
-</div>
-
-<div class="block">
-  <div class="block-label"><div class="block-num">3</div><span class="block-name">行動呼籲 CTA</span></div>
-  <div class="fill-area">
-    <div class="template-text">
-      想要完整版的<span class="blank" contenteditable="true" data-placeholder="資料名稱" data-key="p1_gift"></span>？留言「<span class="blank" contenteditable="true" data-placeholder="關鍵字" data-key="p1_cta"></span>」我馬上傳給你！
-    </div>
+  <div class="block">
+    <div class="block-label"><div class="block-num">3</div><span class="block-name">行動呼籲 CTA</span></div>
+    <div class="template-text">想要完整版的<span class="blank" contenteditable="true" data-placeholder="資料名稱" data-key="p1_gift"></span>？留言「<span class="blank" contenteditable="true" data-placeholder="關鍵字" data-key="p1_cta"></span>」我馬上傳給你！</div>
     <div class="hint-row">
       <span class="hint-chip" onclick="fillBlank('p1_gift','教學懶人包')">教學懶人包</span>
-      <span class="hint-chip" onclick="fillBlank('p1_gift','完整攻略')">完整攻略</span>
       <span class="hint-chip" onclick="fillBlank('p1_cta','我要')">我要</span>
-      <span class="hint-chip" onclick="fillBlank('p1_cta','傳我')">傳我</span>
     </div>
   </div>
+  <div class="preview-section">
+    <div class="preview-header">
+      <span class="preview-label">預覽腳本</span>
+      <button class="copy-btn" onclick="copyScript(1)">複製</button>
+    </div>
+    <div class="preview-body" id="preview-1">填完上方空格，腳本會自動出現 ✍️</div>
+  </div>
+  <button class="reset-btn" onclick="resetPanel(1)">↺ 清空重填</button>
 </div>
 
-<div class="preview-section">
-  <div class="preview-header">
-    <span class="preview-label">預覽腳本</span>
-    <button class="copy-btn" onclick="copyScript(1)">複製</button>
+<!-- PANEL 2 -->
+
+<div class="script-panel" id="panel-2">
+  <div class="panel-header">
+    <span class="panel-title">對比反差型</span>
+    <span class="panel-badge">最高分享率</span>
   </div>
-  <div class="preview-body" id="preview-1">填完上方空格，這裡會自動生成你的腳本 ✍️</div>
-</div>
-<button class="reset-btn" onclick="resetPanel(1)">↺ 清空重填</button>
-```
-
-  </div>
-
-  <!-- PANEL 2: 對比反差 -->
-
-  <div class="script-panel" id="panel-2">
-    <div class="panel-header">
-      <span class="panel-title">對比反差型</span>
-      <span class="panel-badge">最高分享率</span>
-    </div>
-
-```
-<div class="block">
-  <div class="block-label"><div class="block-num">1</div><span class="block-name">「以前 vs 現在」開場</span></div>
-  <div class="fill-area">
-    <div class="template-text">
-      以前的我：<span class="blank" contenteditable="true" data-placeholder="以前的狀態" data-key="p2_before"></span>。<br>
-      現在的我：<span class="blank" contenteditable="true" data-placeholder="現在的狀態" data-key="p2_after"></span>。
-    </div>
+  <div class="block">
+    <div class="block-label"><div class="block-num">1</div><span class="block-name">「以前 vs 現在」開場</span></div>
+    <div class="template-text">以前的我：<span class="blank" contenteditable="true" data-placeholder="以前的狀態" data-key="p2_before"></span>。<br>現在的我：<span class="blank" contenteditable="true" data-placeholder="現在的狀態" data-key="p2_after"></span>。</div>
     <div class="hint-row">
-      <span class="hint-label">靈感：</span>
       <span class="hint-chip" onclick="fillBlank('p2_before','每天擔心流量')">擔心流量</span>
-      <span class="hint-chip" onclick="fillBlank('p2_before','月收入只有兩萬')">月收入低</span>
       <span class="hint-chip" onclick="fillBlank('p2_after','每天自動進單')">自動進單</span>
-      <span class="hint-chip" onclick="fillBlank('p2_after','粉絲主動找上門')">粉絲找上門</span>
     </div>
   </div>
-</div>
-
-<div class="block">
-  <div class="block-label"><div class="block-num">2</div><span class="block-name">關鍵轉折</span></div>
-  <div class="fill-area">
-    <div class="template-text">
-      改變一切的是<span class="blank" contenteditable="true" data-placeholder="關鍵行動/工具" data-key="p2_key"></span>，這個方法讓我在<span class="blank" contenteditable="true" data-placeholder="時間" data-key="p2_time"></span>內做到<span class="blank" contenteditable="true" data-placeholder="具體成果" data-key="p2_result"></span>。
-    </div>
+  <div class="block">
+    <div class="block-label"><div class="block-num">2</div><span class="block-name">關鍵轉折</span></div>
+    <div class="template-text">改變一切的是<span class="blank" contenteditable="true" data-placeholder="關鍵行動/工具" data-key="p2_key"></span>，這個方法讓我在<span class="blank" contenteditable="true" data-placeholder="時間" data-key="p2_time"></span>內做到<span class="blank" contenteditable="true" data-placeholder="具體成果" data-key="p2_result"></span>。</div>
     <div class="hint-row">
       <span class="hint-chip" onclick="fillBlank('p2_key','自動回覆系統')">自動回覆</span>
-      <span class="hint-chip" onclick="fillBlank('p2_key','固定腳本公式')">腳本公式</span>
       <span class="hint-chip" onclick="fillBlank('p2_time','30天')">30天</span>
-      <span class="hint-chip" onclick="fillBlank('p2_result','增加1000粉絲')">增加粉絲</span>
+      <span class="hint-chip" onclick="fillBlank('p2_result','增加1000粉絲')">增粉</span>
     </div>
   </div>
-</div>
-
-<div class="block">
-  <div class="block-label"><div class="block-num">3</div><span class="block-name">行動呼籲 CTA</span></div>
-  <div class="fill-area">
-    <div class="template-text">
-      你也想從<span class="blank" contenteditable="true" data-placeholder="現在的困境" data-key="p2_from"></span>變成<span class="blank" contenteditable="true" data-placeholder="想要的結果" data-key="p2_to"></span>嗎？留言「<span class="blank" contenteditable="true" data-placeholder="關鍵字" data-key="p2_cta"></span>」告訴我！
-    </div>
+  <div class="block">
+    <div class="block-label"><div class="block-num">3</div><span class="block-name">行動呼籲 CTA</span></div>
+    <div class="template-text">你也想從<span class="blank" contenteditable="true" data-placeholder="困境" data-key="p2_from"></span>變成<span class="blank" contenteditable="true" data-placeholder="目標" data-key="p2_to"></span>嗎？留言「<span class="blank" contenteditable="true" data-placeholder="關鍵字" data-key="p2_cta"></span>」！</div>
     <div class="hint-row">
       <span class="hint-chip" onclick="fillBlank('p2_from','沒流量')">沒流量</span>
       <span class="hint-chip" onclick="fillBlank('p2_to','被動收單')">被動收單</span>
       <span class="hint-chip" onclick="fillBlank('p2_cta','我想要')">我想要</span>
     </div>
   </div>
+  <div class="preview-section">
+    <div class="preview-header">
+      <span class="preview-label">預覽腳本</span>
+      <button class="copy-btn" onclick="copyScript(2)">複製</button>
+    </div>
+    <div class="preview-body" id="preview-2">填完上方空格，腳本會自動出現 ✍️</div>
+  </div>
+  <button class="reset-btn" onclick="resetPanel(2)">↺ 清空重填</button>
 </div>
 
-<div class="preview-section">
-  <div class="preview-header">
-    <span class="preview-label">預覽腳本</span>
-    <button class="copy-btn" onclick="copyScript(2)">複製</button>
+<!-- PANEL 3 -->
+
+<div class="script-panel" id="panel-3">
+  <div class="panel-header">
+    <span class="panel-title">結果導向型</span>
+    <span class="panel-badge">最高轉換率</span>
   </div>
-  <div class="preview-body" id="preview-2">填完上方空格，這裡會自動生成你的腳本 ✍️</div>
-</div>
-<button class="reset-btn" onclick="resetPanel(2)">↺ 清空重填</button>
-```
-
-  </div>
-
-  <!-- PANEL 3: 結果導向 -->
-
-  <div class="script-panel" id="panel-3">
-    <div class="panel-header">
-      <span class="panel-title">結果導向型</span>
-      <span class="panel-badge">最高轉換率</span>
-    </div>
-
-```
-<div class="block">
-  <div class="block-label"><div class="block-num">1</div><span class="block-name">開場：直接說結果</span></div>
-  <div class="fill-area">
-    <div class="template-text">
-      我用這個方法，<span class="blank" contenteditable="true" data-placeholder="時間" data-key="p3_time"></span>內達到<span class="blank" contenteditable="true" data-placeholder="具體數字成果" data-key="p3_num"></span>。
-    </div>
+  <div class="block">
+    <div class="block-label"><div class="block-num">1</div><span class="block-name">開場：直接說結果</span></div>
+    <div class="template-text">我用這個方法，<span class="blank" contenteditable="true" data-placeholder="時間" data-key="p3_time"></span>內達到<span class="blank" contenteditable="true" data-placeholder="具體數字成果" data-key="p3_num"></span>。</div>
     <div class="hint-row">
       <span class="hint-chip" onclick="fillBlank('p3_time','7天')">7天</span>
-      <span class="hint-chip" onclick="fillBlank('p3_time','一個月')">一個月</span>
       <span class="hint-chip" onclick="fillBlank('p3_num','粉絲從0到5000')">0到5000粉</span>
-      <span class="hint-chip" onclick="fillBlank('p3_num','月收多六位數')">月收六位數</span>
     </div>
   </div>
-</div>
-
-<div class="block">
-  <div class="block-label"><div class="block-num">2</div><span class="block-name">步驟說明</span></div>
-  <div class="fill-area">
-    <div class="template-text">
-      步驟一：<span class="blank" contenteditable="true" data-placeholder="步驟一" data-key="p3_s1"></span>。<br>
-      步驟二：<span class="blank" contenteditable="true" data-placeholder="步驟二" data-key="p3_s2"></span>。<br>
-      步驟三：<span class="blank" contenteditable="true" data-placeholder="步驟三" data-key="p3_s3"></span>。
-    </div>
+  <div class="block">
+    <div class="block-label"><div class="block-num">2</div><span class="block-name">步驟說明</span></div>
+    <div class="template-text">步驟一：<span class="blank" contenteditable="true" data-placeholder="步驟一" data-key="p3_s1"></span>。<br>步驟二：<span class="blank" contenteditable="true" data-placeholder="步驟二" data-key="p3_s2"></span>。<br>步驟三：<span class="blank" contenteditable="true" data-placeholder="步驟三" data-key="p3_s3"></span>。</div>
     <div class="hint-row">
-      <span class="hint-chip" onclick="fillBlank('p3_s1','確定你的內容定位')">定位</span>
-      <span class="hint-chip" onclick="fillBlank('p3_s2','每週固定發3支影片')">固定發片</span>
-      <span class="hint-chip" onclick="fillBlank('p3_s3','設定自動回覆收名單')">自動回覆</span>
+      <span class="hint-chip" onclick="fillBlank('p3_s1','確定內容定位')">定位</span>
+      <span class="hint-chip" onclick="fillBlank('p3_s2','每週固定發3支')">固定發片</span>
+      <span class="hint-chip" onclick="fillBlank('p3_s3','設定自動回覆')">自動回覆</span>
     </div>
   </div>
-</div>
-
-<div class="block">
-  <div class="block-label"><div class="block-num">3</div><span class="block-name">行動呼籲 CTA</span></div>
-  <div class="fill-area">
-    <div class="template-text">
-      完整的<span class="blank" contenteditable="true" data-placeholder="資料/教學名稱" data-key="p3_gift"></span>，留言「<span class="blank" contenteditable="true" data-placeholder="關鍵字" data-key="p3_cta"></span>」免費領取！
-    </div>
+  <div class="block">
+    <div class="block-label"><div class="block-num">3</div><span class="block-name">行動呼籲 CTA</span></div>
+    <div class="template-text">完整的<span class="blank" contenteditable="true" data-placeholder="資料名稱" data-key="p3_gift"></span>，留言「<span class="blank" contenteditable="true" data-placeholder="關鍵字" data-key="p3_cta"></span>」免費領取！</div>
     <div class="hint-row">
       <span class="hint-chip" onclick="fillBlank('p3_gift','SOP流程表')">SOP流程表</span>
-      <span class="hint-chip" onclick="fillBlank('p3_gift','操作教學')">操作教學</span>
       <span class="hint-chip" onclick="fillBlank('p3_cta','我要領')">我要領</span>
     </div>
   </div>
+  <div class="preview-section">
+    <div class="preview-header">
+      <span class="preview-label">預覽腳本</span>
+      <button class="copy-btn" onclick="copyScript(3)">複製</button>
+    </div>
+    <div class="preview-body" id="preview-3">填完上方空格，腳本會自動出現 ✍️</div>
+  </div>
+  <button class="reset-btn" onclick="resetPanel(3)">↺ 清空重填</button>
 </div>
 
-<div class="preview-section">
-  <div class="preview-header">
-    <span class="preview-label">預覽腳本</span>
-    <button class="copy-btn" onclick="copyScript(3)">複製</button>
+<!-- PANEL 4 -->
+
+<div class="script-panel" id="panel-4">
+  <div class="panel-header">
+    <span class="panel-title">身份認同型</span>
+    <span class="panel-badge">最高追蹤率</span>
   </div>
-  <div class="preview-body" id="preview-3">填完上方空格，這裡會自動生成你的腳本 ✍️</div>
-</div>
-<button class="reset-btn" onclick="resetPanel(3)">↺ 清空重填</button>
-```
-
-  </div>
-
-  <!-- PANEL 4: 身份認同 -->
-
-  <div class="script-panel" id="panel-4">
-    <div class="panel-header">
-      <span class="panel-title">身份認同型</span>
-      <span class="panel-badge">最高追蹤率</span>
-    </div>
-
-```
-<div class="block">
-  <div class="block-label"><div class="block-num">1</div><span class="block-name">開場：鎖定身份</span></div>
-  <div class="fill-area">
-    <div class="template-text">
-      這支影片是拍給<span class="blank" contenteditable="true" data-placeholder="目標對象" data-key="p4_who"></span>看的。
-    </div>
+  <div class="block">
+    <div class="block-label"><div class="block-num">1</div><span class="block-name">開場：鎖定身份</span></div>
+    <div class="template-text">這支影片是拍給<span class="blank" contenteditable="true" data-placeholder="目標對象" data-key="p4_who"></span>看的。</div>
     <div class="hint-row">
       <span class="hint-chip" onclick="fillBlank('p4_who','想用自媒體賺錢的美業老闆')">美業老闆</span>
-      <span class="hint-chip" onclick="fillBlank('p4_who','想在IG漲粉的創業者')">創業者</span>
       <span class="hint-chip" onclick="fillBlank('p4_who','想開始副業的上班族')">上班族</span>
     </div>
   </div>
-</div>
-
-<div class="block">
-  <div class="block-label"><div class="block-num">2</div><span class="block-name">共同困境</span></div>
-  <div class="fill-area">
-    <div class="template-text">
-      如果你正在面對<span class="blank" contenteditable="true" data-placeholder="共同困境" data-key="p4_pain"></span>，你一定要知道這件事：<span class="blank" contenteditable="true" data-placeholder="核心洞察" data-key="p4_insight"></span>。
-    </div>
+  <div class="block">
+    <div class="block-label"><div class="block-num">2</div><span class="block-name">共同困境</span></div>
+    <div class="template-text">如果你正在面對<span class="blank" contenteditable="true" data-placeholder="共同困境" data-key="p4_pain"></span>，你一定要知道：<span class="blank" contenteditable="true" data-placeholder="核心洞察" data-key="p4_insight"></span>。</div>
     <div class="hint-row">
       <span class="hint-chip" onclick="fillBlank('p4_pain','流量越來越難做')">流量難做</span>
-      <span class="hint-chip" onclick="fillBlank('p4_pain','不知道怎麼變現')">不知如何變現</span>
-      <span class="hint-chip" onclick="fillBlank('p4_insight','方法對了比努力更重要')">方法比努力重要</span>
+      <span class="hint-chip" onclick="fillBlank('p4_insight','方法對了比努力重要')">方法比努力重要</span>
     </div>
   </div>
-</div>
-
-<div class="block">
-  <div class="block-label"><div class="block-num">3</div><span class="block-name">邀請加入</span></div>
-  <div class="fill-area">
-    <div class="template-text">
-      追蹤我，我會持續分享<span class="blank" contenteditable="true" data-placeholder="你的內容主題" data-key="p4_content"></span>。留言「<span class="blank" contenteditable="true" data-placeholder="關鍵字" data-key="p4_cta"></span>」還可以免費拿到<span class="blank" contenteditable="true" data-placeholder="資料" data-key="p4_gift"></span>！
-    </div>
+  <div class="block">
+    <div class="block-label"><div class="block-num">3</div><span class="block-name">邀請加入</span></div>
+    <div class="template-text">追蹤我，我會持續分享<span class="blank" contenteditable="true" data-placeholder="你的內容主題" data-key="p4_content"></span>。留言「<span class="blank" contenteditable="true" data-placeholder="關鍵字" data-key="p4_cta"></span>」免費拿<span class="blank" contenteditable="true" data-placeholder="資料" data-key="p4_gift"></span>！</div>
     <div class="hint-row">
       <span class="hint-chip" onclick="fillBlank('p4_content','自媒體經營乾貨')">自媒體乾貨</span>
-      <span class="hint-chip" onclick="fillBlank('p4_content','美業創業心得')">美業心得</span>
       <span class="hint-chip" onclick="fillBlank('p4_cta','追蹤')">追蹤</span>
-      <span class="hint-chip" onclick="fillBlank('p4_gift','新手入門包')">新手入門包</span>
+      <span class="hint-chip" onclick="fillBlank('p4_gift','新手入門包')">入門包</span>
+    </div>
+  </div>
+  <div class="preview-section">
+    <div class="preview-header">
+      <span class="preview-label">預覽腳本</span>
+      <button class="copy-btn" onclick="copyScript(4)">複製</button>
+    </div>
+    <div class="preview-body" id="preview-4">填完上方空格，腳本會自動出現 ✍️</div>
+  </div>
+  <button class="reset-btn" onclick="resetPanel(4)">↺ 清空重填</button>
+</div>
+
+<!-- FORMULA -->
+
+<div>
+  <div class="section-head">
+    <h2>腳本公式速查</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="formula-grid">
+    <div class="formula-card">
+      <div class="formula-top"><div class="formula-name">① 痛點共鳴</div><div class="formula-desc">教學類、轉型故事</div></div>
+      <div class="formula-body"><span>痛點</span> → 共鳴 → <span>解法</span> → CTA</div>
+    </div>
+    <div class="formula-card">
+      <div class="formula-top"><div class="formula-name">② 揭秘教學</div><div class="formula-desc">乾貨分享、知識型</div></div>
+      <div class="formula-body"><span>數字鉤子</span> → 列點 → <span>CTA領資料</span></div>
+    </div>
+    <div class="formula-card">
+      <div class="formula-top"><div class="formula-name">③ 對比反差</div><div class="formula-desc">成長故事、轉變歷程</div></div>
+      <div class="formula-body"><span>以前</span> → 現在 → <span>關鍵轉折</span> → CTA</div>
+    </div>
+    <div class="formula-card">
+      <div class="formula-top"><div class="formula-name">④ 結果導向</div><div class="formula-desc">產品推廣、方法論</div></div>
+      <div class="formula-body"><span>直接說成果</span> → 步驟 → <span>CTA</span></div>
     </div>
   </div>
 </div>
 
-<div class="preview-section">
-  <div class="preview-header">
-    <span class="preview-label">預覽腳本</span>
-    <button class="copy-btn" onclick="copyScript(4)">複製</button>
-  </div>
-  <div class="preview-body" id="preview-4">填完上方空格，這裡會自動生成你的腳本 ✍️</div>
-</div>
-<button class="reset-btn" onclick="resetPanel(4)">↺ 清空重填</button>
-```
-
-  </div>
-
-  <!-- FORMULA GUIDE -->
-
-  <div class="formula-section">
-    <div class="section-head">
-      <h2>腳本公式速查</h2>
-      <div class="section-line"></div>
-    </div>
-    <div class="formula-grid">
-      <div class="formula-card">
-        <div class="formula-top">
-          <div class="formula-name">① 痛點共鳴</div>
-          <div class="formula-desc">適合：教學類、轉型故事</div>
-        </div>
-        <div class="formula-body">
-          <span>痛點</span> → 共鳴 → <span>解法</span> → CTA
-        </div>
-      </div>
-      <div class="formula-card">
-        <div class="formula-top">
-          <div class="formula-name">② 揭秘教學</div>
-          <div class="formula-desc">適合：乾貨分享、知識型</div>
-        </div>
-        <div class="formula-body">
-          <span>數字鉤子</span> → 列點 → <span>CTA領資料</span>
-        </div>
-      </div>
-      <div class="formula-card">
-        <div class="formula-top">
-          <div class="formula-name">③ 對比反差</div>
-          <div class="formula-desc">適合：成長故事、轉變歷程</div>
-        </div>
-        <div class="formula-body">
-          <span>以前</span> → 現在 → <span>關鍵轉折</span> → CTA
-        </div>
-      </div>
-      <div class="formula-card">
-        <div class="formula-top">
-          <div class="formula-name">④ 結果導向</div>
-          <div class="formula-desc">適合：產品推廣、方法論</div>
-        </div>
-        <div class="formula-body">
-          <span>直接說成果</span> → 步驟 → <span>CTA</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="footer">
-    Made with ♡ by <strong>@a.b_wei</strong>
-  </div>
+<div class="footer">Made with ♡ by <strong>@a.b_wei</strong></div>
 
 </div>
-
 <script>
-// Tab switching
 function switchTab(idx) {
   document.querySelectorAll('.tab-btn').forEach((b,i) => b.classList.toggle('active', i===idx));
   document.querySelectorAll('.script-panel').forEach((p,i) => p.classList.toggle('active', i===idx));
 }
 
-// Fill blank from hint chip
 function fillBlank(key, val) {
-  const el = document.querySelector(`[data-key="${key}"]`);
-  if (el) { el.textContent = val; el.dispatchEvent(new Event('input')); updatePreview(); }
+const el = document.querySelector(’[data-key=”’+key+’”]’);
+if (el) { el.textContent = val; updatePreview(); }
 }
 
-// Update all previews on input
-document.addEventListener('input', updatePreview);
+document.addEventListener(‘input’, updatePreview);
 
 const TEMPLATES = [
-  () => {
-    const g = k => getVal(k);
-    return `你是不是也有這個困擾：${g('p0_pain')}？\n\n我之前也是這樣，${g('p0_exp')}，覺得${g('p0_feel')}。\n\n直到我發現了${g('p0_sol')}，只要${g('p0_step')}就能做到。\n\n留言「${g('p0_cta')}」，我私傳給你完整的${g('p0_gift')}！`;
-  },
-  () => {
-    const g = k => getVal(k);
-    return `${g('p1_num')}個關於${g('p1_topic')}的秘密，${g('p1_who')}都不知道！\n\n第一：${g('p1_t1')}。\n第二：${g('p1_t2')}。\n第三：${g('p1_t3')}。\n\n想要完整版的${g('p1_gift')}？留言「${g('p1_cta')}」我馬上傳給你！`;
-  },
-  () => {
-    const g = k => getVal(k);
-    return `以前的我：${g('p2_before')}。\n現在的我：${g('p2_after')}。\n\n改變一切的是${g('p2_key')}，這個方法讓我在${g('p2_time')}內做到${g('p2_result')}。\n\n你也想從${g('p2_from')}變成${g('p2_to')}嗎？留言「${g('p2_cta')}」告訴我！`;
-  },
-  () => {
-    const g = k => getVal(k);
-    return `我用這個方法，${g('p3_time')}內達到${g('p3_num')}。\n\n步驟一：${g('p3_s1')}。\n步驟二：${g('p3_s2')}。\n步驟三：${g('p3_s3')}。\n\n完整的${g('p3_gift')}，留言「${g('p3_cta')}」免費領取！`;
-  },
-  () => {
-    const g = k => getVal(k);
-    return `這支影片是拍給${g('p4_who')}看的。\n\n如果你正在面對${g('p4_pain')}，你一定要知道這件事：${g('p4_insight')}。\n\n追蹤我，我會持續分享${g('p4_content')}。留言「${g('p4_cta')}」還可以免費拿到${g('p4_gift')}！`;
-  }
+() => { const g=k=>{const e=document.querySelector(’[data-key=”’+k+’”]’);const v=e?e.textContent.trim():’’;return v||’【’+(e?e.dataset.placeholder:k)+’】’;};
+return ‘你是不是也有這個困擾：’+g(‘p0_pain’)+’？\n\n我之前也是這樣，’+g(‘p0_exp’)+’，覺得’+g(‘p0_feel’)+’。\n\n直到我發現了’+g(‘p0_sol’)+’，只要’+g(‘p0_step’)+‘就能做到。\n\n留言「’+g(‘p0_cta’)+’」，我私傳給你完整的’+g(‘p0_gift’)+’！’; },
+() => { const g=k=>{const e=document.querySelector(’[data-key=”’+k+’”]’);const v=e?e.textContent.trim():’’;return v||’【’+(e?e.dataset.placeholder:k)+’】’;};
+return g(‘p1_num’)+‘個關於’+g(‘p1_topic’)+‘的秘密，’+g(‘p1_who’)+‘都不知道！\n\n第一：’+g(‘p1_t1’)+’。\n第二：’+g(‘p1_t2’)+’。\n第三：’+g(‘p1_t3’)+’。\n\n想要完整版的’+g(‘p1_gift’)+’？留言「’+g(‘p1_cta’)+’」我馬上傳給你！’; },
+() => { const g=k=>{const e=document.querySelector(’[data-key=”’+k+’”]’);const v=e?e.textContent.trim():’’;return v||’【’+(e?e.dataset.placeholder:k)+’】’;};
+return ‘以前的我：’+g(‘p2_before’)+’。\n現在的我：’+g(‘p2_after’)+’。\n\n改變一切的是’+g(‘p2_key’)+’，在’+g(‘p2_time’)+‘內做到’+g(‘p2_result’)+’。\n\n你也想從’+g(‘p2_from’)+‘變成’+g(‘p2_to’)+‘嗎？留言「’+g(‘p2_cta’)+’」！’; },
+() => { const g=k=>{const e=document.querySelector(’[data-key=”’+k+’”]’);const v=e?e.textContent.trim():’’;return v||’【’+(e?e.dataset.placeholder:k)+’】’;};
+return ‘我用這個方法，’+g(‘p3_time’)+‘內達到’+g(‘p3_num’)+’。\n\n步驟一：’+g(‘p3_s1’)+’。\n步驟二：’+g(‘p3_s2’)+’。\n步驟三：’+g(‘p3_s3’)+’。\n\n完整的’+g(‘p3_gift’)+’，留言「’+g(‘p3_cta’)+’」免費領取！’; },
+() => { const g=k=>{const e=document.querySelector(’[data-key=”’+k+’”]’);const v=e?e.textContent.trim():’’;return v||’【’+(e?e.dataset.placeholder:k)+’】’;};
+return ‘這支影片是拍給’+g(‘p4_who’)+‘看的。\n\n如果你正在面對’+g(‘p4_pain’)+’，你一定要知道：’+g(‘p4_insight’)+’。\n\n追蹤我，持續分享’+g(‘p4_content’)+’。留言「’+g(‘p4_cta’)+’」免費拿’+g(‘p4_gift’)+’！’; }
 ];
 
-function getVal(key) {
-  const el = document.querySelector(`[data-key="${key}"]`);
-  const v = el ? el.textContent.trim() : '';
-  return v || `【${el ? el.dataset.placeholder : key}】`;
-}
-
 function updatePreview() {
-  TEMPLATES.forEach((fn, i) => {
-    const p = document.getElementById(`preview-${i}`);
-    if (p) p.textContent = fn();
-  });
+TEMPLATES.forEach((fn,i) => { const p=document.getElementById(‘preview-’+i); if(p) p.textContent=fn(); });
 }
 
 function copyScript(idx) {
-  const text = document.getElementById(`preview-${idx}`).textContent;
-  navigator.clipboard.writeText(text).then(() => {
-    const btn = document.querySelectorAll('.copy-btn')[idx];
-    btn.textContent = '已複製 ✓';
-    btn.classList.add('copied');
-    setTimeout(() => { btn.textContent = '複製'; btn.classList.remove('copied'); }, 2000);
-  });
+const text = document.getElementById(‘preview-’+idx).textContent;
+navigator.clipboard.writeText(text).then(() => {
+const btns = document.querySelectorAll(’.copy-btn’);
+btns[idx].textContent=‘已複製 ✓’;
+btns[idx].classList.add(‘copied’);
+setTimeout(()=>{ btns[idx].textContent=‘複製’; btns[idx].classList.remove(‘copied’); }, 2000);
+});
 }
 
 function resetPanel(idx) {
-  const panel = document.getElementById(`panel-${idx}`);
-  panel.querySelectorAll('.blank').forEach(el => el.textContent = '');
-  updatePreview();
+document.getElementById(‘panel-’+idx).querySelectorAll(’.blank’).forEach(el=>el.textContent=’’);
+updatePreview();
 }
 
-// Init
 updatePreview();
 </script>
 
